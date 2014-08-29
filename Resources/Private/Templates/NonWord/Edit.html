@@ -1,15 +1,23 @@
 <f:layout name="Default" />
 
-<f:section name="Title">Edit non word "{nonWord.name}"</f:section>
+<f:section name="Title">Edit non word "{nonWord.title}"</f:section>
 
 <f:section name="Content">
 	<f:form action="update" object="{nonWord}" objectName="nonWord">
 		<ol>
 			<li>
-				<label for="name">Name</label>
-				<f:form.textfield property="name" id="name" />
+				<label for="name">Non Word</label>
+				<f:form.textfield property="title" id="title" />
 			</li>
-		
+			<li>
+				<label for="name">Author</label>
+				<f:form.textfield property="author" id="author" />
+			</li>
+			<li>
+				<label for="name">URL</label>
+				<f:form.textfield property="link" id="link" />
+			</li>
+
 			<li>
 				<f:form.submit value="Update" />
 			</li>

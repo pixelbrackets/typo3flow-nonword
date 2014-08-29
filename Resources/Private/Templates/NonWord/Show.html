@@ -1,13 +1,13 @@
 <f:layout name="Default" />
 
-<f:section name="Title">Show non word"{nonWord.name}"</f:section>
+<f:section name="Title">Show non word"{nonWord.title}"</f:section>
 
 <f:section name="Content">
-	<table>
-		<tr>
-			<th>Name</th>
-			<td>{nonWord.name}</td>
-		</tr>
-	</table>
+	<h2>Non Word</h2>
+	<blockquote cite="{nonWord.link}">
+		<p>{nonWord.title}</p>
+		<footer>— <a href="{nonWord.link}">{nonWord.author}</a></footer>
+	</blockquote>
+
 	<f:link.action action="index">Back</f:link.action>
 </f:section>

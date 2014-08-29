@@ -19,6 +19,8 @@ class NonWordController extends ActionController {
 	protected $nonWordRepository;
 
 	/**
+	 * Show a list of non words
+	 *
 	 * @return void
 	 */
 	public function indexAction() {
@@ -26,6 +28,8 @@ class NonWordController extends ActionController {
 	}
 
 	/**
+	 * Show a single non word
+	 *
 	 * @param \Pixelbrackets\NonWord\Domain\Model\NonWord $nonWord
 	 * @return void
 	 */
@@ -34,22 +38,32 @@ class NonWordController extends ActionController {
 	}
 
 	/**
+	 * Show a form to create a new non word
+	 *
 	 * @return void
 	 */
 	public function newAction() {
 	}
 
 	/**
+	 * Add the given non word object to the non word repository
+	 *
 	 * @param \Pixelbrackets\NonWord\Domain\Model\NonWord $newNonWord
 	 * @return void
 	 */
 	public function createAction(NonWord $newNonWord) {
+		// set current timestamp a creation date
+		$now = time();
+		$newNonWord->setDateOfCreation($now);
+
 		$this->nonWordRepository->add($newNonWord);
 		$this->addFlashMessage('Created a new non word.');
 		$this->redirect('index');
 	}
 
 	/**
+	 * Show a form to edit an existing non word
+	 *
 	 * @param \Pixelbrackets\NonWord\Domain\Model\NonWord $nonWord
 	 * @return void
 	 */
@@ -58,6 +72,8 @@ class NonWordController extends ActionController {
 	}
 
 	/**
+	 * Update a non word
+	 *
 	 * @param \Pixelbrackets\NonWord\Domain\Model\NonWord $nonWord
 	 * @return void
 	 */
@@ -68,6 +84,8 @@ class NonWordController extends ActionController {
 	}
 
 	/**
+	 * Remove the given non word object from the non word repository
+	 *
 	 * @param \Pixelbrackets\NonWord\Domain\Model\NonWord $nonWord
 	 * @return void
 	 */
