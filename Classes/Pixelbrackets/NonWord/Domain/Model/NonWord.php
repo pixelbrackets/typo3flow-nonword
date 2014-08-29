@@ -18,6 +18,8 @@ class NonWord {
 	 * Who said it? Author of the non word.
 	 *
 	 * @var string
+	 * @Flow\Validate(type="StringLength", options={ "minimum"=3, "maximum"=80 })
+	 * @ORM\Column(length=80)
 	 * @ORM\Column(nullable=true)
 	 */
 	protected $author;
@@ -43,6 +45,7 @@ class NonWord {
 	 * @var string
 	 * @Flow\Validate(type="NotEmpty")
 	 * @Flow\Validate(type="StringLength", options={ "minimum"=3, "maximum"=140 })
+	 * @ORM\Column(length=140)
 	 */
 	protected $title;
 
