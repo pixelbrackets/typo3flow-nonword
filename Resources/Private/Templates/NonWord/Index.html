@@ -1,0 +1,25 @@
+<f:layout name="Default" />
+
+<f:section name="Title">A list of non words</f:section>
+
+<f:section name="Content">
+	<f:if condition="{nonWords}">
+		<f:then>
+			<ul>
+				<f:for each="{nonWords}" as="nonWord">
+					<li>
+						<f:link.action action="show" arguments="{nonWord: nonWord}">{nonWord.name}</f:link.action>
+						<f:link.action action="edit" arguments="{nonWord: nonWord}">Edit</f:link.action>
+						<f:form action="delete" arguments="{nonWord: nonWord}">
+							<f:form.submit value="Delete" />
+						</f:form>
+					</li>
+				</f:for>
+			</ul>
+		</f:then>
+		<f:else>
+			<p>No non words created yet.</p>
+		</f:else>
+	</f:if>
+	<p><f:link.action action="new">Create a new non word</f:link.action></p>
+</f:section>
