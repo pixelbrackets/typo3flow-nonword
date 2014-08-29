@@ -14,6 +14,15 @@ use TYPO3\Flow\Persistence\Repository;
  */
 class NonWordRepository extends Repository {
 
-	// add customized methods here
+	/**
+	 * Get a random non word object
+	 *
+	 * @return \Pixelbrackets\NonWord\Domain\Model\NonWord Random non word
+	 **/
+	public function findRandom() {
+		$rowCount = $this->createQuery()->execute()->count();
+		$randomRowNumber = mt_rand(0, max(0, ($rowCount - 1)));
+		return $this->createQuery()->setOffset($randomRowNumber)->setLimit(1)->execute()->getFirst();
+	}
 
 }

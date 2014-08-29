@@ -38,6 +38,15 @@ class NonWordController extends ActionController {
 	}
 
 	/**
+	 * Show a random non word
+	 *
+	 * @return void
+	 */
+	public function randomAction() {
+		$this->view->assign('nonWord', $this->nonWordRepository->findRandom());
+	}
+
+	/**
 	 * Show a form to create a new non word
 	 *
 	 * @return void
