@@ -18,6 +18,7 @@ class NonWord {
 	 * Who said it? Author of the non word.
 	 *
 	 * @var string
+	 * @ORM\Column(nullable=true)
 	 */
 	protected $author;
 
@@ -32,6 +33,7 @@ class NonWord {
 	 * URL please! URL to the source.
 	 *
 	 * @var string
+	 * @ORM\Column(nullable=true)
 	 */
 	protected $link;
 
@@ -39,6 +41,8 @@ class NonWord {
 	 * The non word. Ugly, ugly, ugly.
 	 *
 	 * @var string
+	 * @Flow\Validate(type="NotEmpty")
+	 * @Flow\Validate(type="StringLength", options={ "minimum"=3, "maximum"=140 })
 	 */
 	protected $title;
 
