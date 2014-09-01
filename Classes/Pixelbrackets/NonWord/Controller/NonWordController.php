@@ -53,10 +53,15 @@ class NonWordController extends ActionController {
 	 * @return void
 	 */
 	public function downvoteAction(NonWord $nonWord) {
-		$nonWord->setVotes(-1);
-		$this->nonWordRepository->update($nonWord);
-		$this->addFlashMessage('Downvoted the non word.');
-
+		// dont allow votes to drop below 0
+		if($nonWord->getVotes() === 0) {
+			$this->addFlashMessage('Wut? Downvoting not possible.');
+		}
+		else {
+			$nonWord->setVotes(-1);
+			$this->nonWordRepository->update($nonWord);
+			$this->addFlashMessage('Downvoted the non word.');
+		}
 		$this->view->assign('nonWord', $nonWord);
 		$this->redirect('show', NULL, NULL, array('nonWord' => $nonWord));
 	}
