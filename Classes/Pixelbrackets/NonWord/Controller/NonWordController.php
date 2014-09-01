@@ -62,8 +62,8 @@ class NonWordController extends ActionController {
 	 * @return void
 	 */
 	public function createAction(NonWord $newNonWord) {
-		// set current timestamp a creation date
-		$now = time();
+		// set current date as creation date
+		$now = new \DateTime();
 		$newNonWord->setDateOfCreation($now);
 
 		$this->nonWordRepository->add($newNonWord);

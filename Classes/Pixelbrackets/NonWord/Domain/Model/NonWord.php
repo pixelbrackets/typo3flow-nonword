@@ -27,7 +27,7 @@ class NonWord {
 	/**
 	 * When was this non word publicly proclaimed? Date of creation.
 	 *
-	 * @var integer
+	 * @var \DateTime
 	 */
 	protected $dateOfCreation;
 
@@ -49,6 +49,13 @@ class NonWord {
 	 * @ORM\Column(length=140)
 	 */
 	protected $title;
+
+	///**
+	//* Construct this non word
+	//*/
+	//public function __construct() {
+	//	$this->dateOfCreation = new \DateTime();
+	//}
 
 	/**
 	 * Set the author of the non word
@@ -78,14 +85,13 @@ class NonWord {
 		return $this->dateOfCreation;
 	}
 
-
 	/**
 	 * Set the creation date of the non word
 	 *
-	 * @param integer $dateOfCreation
+	 * @param \DateTime $dateOfCreation
 	 * @return void
 	 */
-	public function setDateOfCreation($dateOfCreation) {
+	public function setDateOfCreation(\DateTime $dateOfCreation) {
 		$this->dateOfCreation = $dateOfCreation;
 	}
 
@@ -97,7 +103,6 @@ class NonWord {
 	public function getLink() {
 		return $this->link;
 	}
-
 
 	/**
 	 * Set the URL to the source of the non word
