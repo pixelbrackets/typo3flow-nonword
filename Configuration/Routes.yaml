@@ -14,6 +14,19 @@
 #      package: Pixelbrackets.NonWord
 
 -
+  name: 'Single non word'
+  uriPattern: 'nonword/{nonWord}'
+  defaults:
+    '@package':    'Pixelbrackets.NonWord'
+    '@controller': 'NonWord'
+    '@action': 'show'
+    '@format':     'html'
+  routeParts:
+    nonWord:
+      objectType: 'Pixelbrackets\NonWord\Domain\Model\NonWord'
+      uriPattern: '{title}'
+
+-
   name: 'Single non word actions'
   uriPattern: 'nonword/{nonWord}/{@action}'
   defaults:
