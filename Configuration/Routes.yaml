@@ -1,0 +1,35 @@
+##
+# Add this to /Configurtion/Routes.yaml
+#
+# Subroutes for the non word package
+#
+
+#-
+#  name: 'NonWord'
+#  uriPattern: '<NonWordSubroutes>'
+#  defaults:
+#    '@format': 'html'
+#  subRoutes:
+#    NonWordSubroutes:
+#      package: Pixelbrackets.NonWord
+
+-
+  name: 'Single non word actions'
+  uriPattern: 'nonword/{nonWord}/{@action}'
+  defaults:
+    '@package':    'Pixelbrackets.NonWord'
+    '@controller': 'NonWord'
+    '@format':     'html'
+  routeParts:
+    nonWord:
+      objectType: 'Pixelbrackets\NonWord\Domain\Model\NonWord'
+      uriPattern: '{title}'
+
+-
+  name: 'NonWord actions'
+  uriPattern: 'nonword(/{@action})'
+  defaults:
+    '@package':    'Pixelbrackets.NonWord'
+    '@controller': 'NonWord'
+    '@action':     'index'
+    '@format':     'html'
