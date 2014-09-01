@@ -47,6 +47,36 @@ class NonWordController extends ActionController {
 	}
 
 	/**
+	 * Downvote a non word
+	 *
+	 * @param \Pixelbrackets\NonWord\Domain\Model\NonWord $nonWord
+	 * @return void
+	 */
+	public function downvoteAction(NonWord $nonWord) {
+		$nonWord->setVotes(-1);
+		$this->nonWordRepository->update($nonWord);
+		$this->addFlashMessage('Downvoted the non word.');
+
+		$this->view->assign('nonWord', $nonWord);
+		$this->redirect('show', NULL, NULL, array('nonWord' => $nonWord));
+	}
+
+	/**
+	 * Upvote a non word
+	 *
+	 * @param \Pixelbrackets\NonWord\Domain\Model\NonWord $nonWord
+	 * @return void
+	 */
+	public function upvoteAction(NonWord $nonWord) {
+		$nonWord->setVotes(+1);
+		$this->nonWordRepository->update($nonWord);
+		$this->addFlashMessage('Upvoted the non word.');
+
+		$this->view->assign('nonWord', $nonWord);
+		$this->redirect('show', NULL, NULL, array('nonWord' => $nonWord));
+	}
+
+	/**
 	 * Show a form to create a new non word
 	 *
 	 * @return void
@@ -62,10 +92,6 @@ class NonWordController extends ActionController {
 	 * @return void
 	 */
 	public function createAction(NonWord $newNonWord) {
-		// set current date as creation date
-		$now = new \DateTime();
-		$newNonWord->setDateOfCreation($now);
-
 		$this->nonWordRepository->add($newNonWord);
 		$this->addFlashMessage('Created a new non word.');
 		$this->redirect('index');

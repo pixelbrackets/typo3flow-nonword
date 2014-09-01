@@ -40,6 +40,13 @@ class NonWord {
 	protected $link;
 
 	/**
+	 * I Like! Number of upvotes for this non word.
+	 *
+	 * @var integer
+	 */
+	protected $votes;
+
+	/**
 	 * The non word. Ugly, ugly, ugly.
 	 *
 	 * @var string
@@ -50,12 +57,13 @@ class NonWord {
 	 */
 	protected $title;
 
-	///**
-	//* Construct this non word
-	//*/
-	//public function __construct() {
-	//	$this->dateOfCreation = new \DateTime();
-	//}
+	/**
+	* Construct this non word
+	*/
+	public function __construct() {
+		$this->dateOfCreation = new \DateTime();
+		$this->votes = 0;
+	}
 
 	/**
 	 * Set the author of the non word
@@ -112,6 +120,25 @@ class NonWord {
 	 */
 	public function setLink($link) {
 		$this->link = $link;
+	}
+
+	/**
+	 * Down-/Upvote the non word
+	 *
+	 * @param integer $vote Number of votes to add/subtract
+	 * @return void
+	 */
+	public function setVotes($vote) {
+		$this->votes += $vote;
+	}
+
+	/**
+	 * Get the votes for this non word
+	 *
+	 * @return integer
+	 */
+	public function getVotes() {
+		return $this->votes;
 	}
 
 	/**

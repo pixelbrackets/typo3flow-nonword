@@ -9,6 +9,8 @@
 				<f:for each="{nonWords}" as="nonWord">
 					<li>
 						<f:link.action action="show" arguments="{nonWord: nonWord}">{nonWord.title}</f:link.action>
+						<f:link.action action="downvote" arguments="{nonWord: nonWord}">Downvote</f:link.action>
+						<f:link.action action="upvote" arguments="{nonWord: nonWord}">Upvote</f:link.action>
 						<f:link.action action="edit" arguments="{nonWord: nonWord}">Edit</f:link.action>
 						<f:form action="delete" arguments="{nonWord: nonWord}">
 							<f:form.submit value="Delete" />
