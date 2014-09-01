@@ -43,6 +43,7 @@ class NonWord {
 	 * The non word. Ugly, ugly, ugly.
 	 *
 	 * @var string
+	 * @Flow\Identity
 	 * @Flow\Validate(type="NotEmpty")
 	 * @Flow\Validate(type="StringLength", options={ "minimum"=3, "maximum"=140 })
 	 * @ORM\Column(length=140)

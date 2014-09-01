@@ -58,6 +58,7 @@ class NonWordController extends ActionController {
 	 * Add the given non word object to the non word repository
 	 *
 	 * @param \Pixelbrackets\NonWord\Domain\Model\NonWord $newNonWord
+	 * @Flow\Validate(argumentName="newNonWord", type="UniqueEntity", options={ "identityProperties"={"title"} })
 	 * @return void
 	 */
 	public function createAction(NonWord $newNonWord) {
@@ -84,6 +85,7 @@ class NonWordController extends ActionController {
 	 * Update a non word
 	 *
 	 * @param \Pixelbrackets\NonWord\Domain\Model\NonWord $nonWord
+	 * @Flow\Validate(argumentName="nonWord", type="UniqueEntity", options={ "identityProperties"={"title"} })
 	 * @return void
 	 */
 	public function updateAction(NonWord $nonWord) {
