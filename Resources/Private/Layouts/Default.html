@@ -1,14 +1,51 @@
 <!DOCTYPE html>
-<html>
+{namespace bootstrap=TYPO3\Twitter\Bootstrap\ViewHelpers}
+<html xmlns:f="http://www.w3.org/1999/html">
 	<head>
 		<meta charset="utf-8">
-		<title><f:render section="Title" /></title>
-		<f:base />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title><f:render section="Title"/></title>
+
+		<f:base/>
+		<bootstrap:include version="3" />
 	</head>
 	<body>
-		<f:flashMessages class="flashmessages" />
+		<div class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<f:link.action action="index" controller="NonWord" class="navbar-brand">List of non words</f:link.action>
+				</div>
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Board</a></li>
+					<f:if condition="{action}=='random'">
+						 <f:then>
+							<li	class="active">
+						</f:then>
+						<f:else>
+							<li>
+						</f:else>
+					</f:if>
+						<f:link.action action="random">Random non word</f:link.action></li>
+				</ul>
+			</div>
+		</div>
 
-		<h1><f:render section="Title" /></h1>
-		<f:render section="Content" />
+		<div class="container">
+			<header>
+				<h1>#nonword</h1>
+			</header>
+
+			<f:flashMessages as="flashMessages">
+				<ul class="unstyled">
+					<f:for each="{flashMessages}" as="flashMessage">
+						<li><span class="glyphicon glyphicon-info-sign"></span> {flashMessage}</li>
+					</f:for>
+				</ul>
+			</f:flashMessages>
+
+			<h1><f:render section="Title" /></h1>
+			<f:render section="Content" />
+		</div>
 	</body>
 </html>
