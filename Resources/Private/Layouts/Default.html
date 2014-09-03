@@ -37,11 +37,13 @@
 			</header>
 
 			<f:flashMessages as="flashMessages">
-				<ul class="unstyled">
-					<f:for each="{flashMessages}" as="flashMessage">
-						<li><span class="glyphicon glyphicon-info-sign"></span> {flashMessage}</li>
-					</f:for>
-				</ul>
+				<div class="alert alert-info" role="alert">
+					<ul class="unstyled">
+						<f:for each="{flashMessages}" as="flashMessage">
+							<li><span class="glyphicon glyphicon-info-sign"></span> {flashMessage}</li>
+						</f:for>
+					</ul>
+				</div>
 			</f:flashMessages>
 
 			<h2><f:render section="Title" /></h2>
