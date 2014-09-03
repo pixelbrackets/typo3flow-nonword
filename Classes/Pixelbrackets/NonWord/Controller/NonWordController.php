@@ -90,6 +90,15 @@ class NonWordController extends ActionController {
 	}
 
 	/**
+	 * Signal
+	 *
+	 * @param \Pixelbrackets\NonWord\Domain\Model\NonWord $nonWord
+	 * @return void
+	 * @Flow\Signal
+	 */
+	protected function emitNonWordCreated(NonWord $nonWord) {}
+
+	/**
 	 * Add the given non word object to the non word repository
 	 *
 	 * @param \Pixelbrackets\NonWord\Domain\Model\NonWord $newNonWord
@@ -98,6 +107,7 @@ class NonWordController extends ActionController {
 	 */
 	public function createAction(NonWord $newNonWord) {
 		$this->nonWordRepository->add($newNonWord);
+		$this->emitNonWordCreated($newNonWord);
 		$this->addFlashMessage('Created a new non word.');
 		$this->redirect('index');
 	}
