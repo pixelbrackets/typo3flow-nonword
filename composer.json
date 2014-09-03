@@ -3,7 +3,8 @@
     "type": "typo3-flow-package",
     "description": "A list of non words",
     "require": {
-        "typo3/flow": "*"
+        "typo3/flow": "*",
+        "typo3/swiftmailer": "*"
     },
     "autoload": {
         "psr-0": {
