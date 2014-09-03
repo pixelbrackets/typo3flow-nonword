@@ -3,17 +3,19 @@
 <f:section name="Title">A list of non words</f:section>
 
 <f:section name="Content">
+	<p><span class="glyphicon glyphicon-plus-sign"></span> <f:link.action action="new">Create a new non word</f:link.action></p>
+
 	<f:if condition="{nonWords}">
 		<f:then>
 			<table class="table table-striped">
 				<colgroup>
-					<col width="*">
+					<col width="0*">
 					<col width="100%">
 				</colgroup>
 				<thead>
 					<tr>
 						<th align="right">Rank</th>
-						<th>Non Word</th>
+						<th>Post</th>
 						<th align="right">Votes</th>
 						<th>Yea or Nay?</th>
 					</tr>
@@ -25,8 +27,10 @@
 							<td><f:link.action action="show" arguments="{nonWord: nonWord}">{nonWord.title}</f:link.action></td>
 							<td align="right">{nonWord.votes}</td>
 							<td>
-								<f:link.action action="downvote" arguments="{nonWord: nonWord}" class="btn btn-default btn-sm">Downvote</f:link.action>
-								<f:link.action action="upvote" arguments="{nonWord: nonWord}" class="btn btn-default btn-sm">Upvote</f:link.action>
+								<div class="btn-group">
+									<f:link.action action="downvote" arguments="{nonWord: nonWord}" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-down"></span> Downvote</f:link.action>
+									<f:link.action action="upvote" arguments="{nonWord: nonWord}" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span> Upvote</f:link.action>
+								</div>
 							</td>
 						</tr>
 					</f:for>
@@ -37,6 +41,4 @@
 			<p>No non words created yet.</p>
 		</f:else>
 	</f:if>
-
-	<p><f:link.action action="new">Create a new non word</f:link.action></p>
 </f:section>
