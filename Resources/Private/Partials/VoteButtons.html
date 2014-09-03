@@ -1,0 +1,11 @@
+<div class="btn-group">
+	<f:if condition="{nonWord.votes}">
+		<f:then>
+			<f:link.action action="downvote" arguments="{nonWord: nonWord}" class="btn btn-default btn-{buttonsize}"><span class="glyphicon glyphicon-thumbs-down"></span> Downvote</f:link.action>
+		</f:then>
+		<f:else>
+			<f:link.external uri="#" class="btn btn-default btn-{buttonsize} disabled"><span class="glyphicon glyphicon-thumbs-down"></span> Downvote</f:link.external>
+		</f:else>
+	</f:if>
+	<f:link.action action="upvote" arguments="{nonWord: nonWord}" class="btn btn-default btn-{buttonsize}"><span class="glyphicon glyphicon-thumbs-up"></span> Upvote</f:link.action>
+</div>

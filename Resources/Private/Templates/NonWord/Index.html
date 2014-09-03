@@ -27,17 +27,7 @@
 							<td><f:link.action action="show" arguments="{nonWord: nonWord}">{nonWord.title}</f:link.action></td>
 							<td align="right">{nonWord.votes}</td>
 							<td>
-								<div class="btn-group">
-									<f:if condition="{nonWord.votes}">
-										<f:then>
-											<f:link.action action="downvote" arguments="{nonWord: nonWord}" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-down"></span> Downvote</f:link.action>
-										</f:then>
-										<f:else>
-											<f:link.external uri="#" class="btn btn-default btn-sm disabled"><span class="glyphicon glyphicon-thumbs-down"></span> Downvote</f:link.external>
-										</f:else>
-									</f:if>
-									<f:link.action action="upvote" arguments="{nonWord: nonWord}" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span> Upvote</f:link.action>
-								</div>
+								<f:render partial="VoteButtons" arguments="{nonWord: '{nonWord}', buttonsize: 'sm'}" />
 							</td>
 						</tr>
 					</f:for>
