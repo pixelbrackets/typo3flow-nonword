@@ -4,6 +4,7 @@
     "description": "A list of non words",
     "require": {
         "typo3/flow": "*",
+        "typo3/twitter-bootstrap": "*",
         "typo3/swiftmailer": "*"
     },
     "autoload": {

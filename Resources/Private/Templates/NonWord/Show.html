@@ -1,15 +1,42 @@
 <f:layout name="Default" />
 
-<f:section name="Title">Show non word"{nonWord.title}"</f:section>
+<f:section name="Title">Show non word “{nonWord.title}”</f:section>
 
 <f:section name="Content">
-	<h2>Non Word</h2>
-	<blockquote cite="{nonWord.link}">
-		<p>{nonWord.title}</p>
-		<footer>— <a href="{nonWord.link}">{nonWord.author}</a></footer>
-	</blockquote>
-	<p><i><f:format.date format="Y-m-d">{nonWord.dateOfCreation}</f:format.date></i></p>
-	<p><i>{nonWord.votes} Votes</i></p>
 
-	<f:link.action action="index">Back</f:link.action>
+	<div class="jumbotron">
+		<blockquote cite="{nonWord.link}">
+			<p>{nonWord.title}</p>
+
+			<f:if condition="{nonWords.link}">
+				<footer>— <a href="{nonWord.link}">{nonWord.author}</a></footer>
+			</f:if>
+		</blockquote>
+
+		<div class="row">
+			<div class="col-md-5">
+				<pre><span class="glyphicon glyphicon-share-alt"></span> <f:link.action action="show" arguments="{nonWord: nonWord}"><f:uri.action action="show" arguments="{nonWord: nonWord}" absolute="true"></f:uri.action></f:link.action></pre>
+			</div>
+			<div class="col-md-3">
+				<p class="pull-right">
+					{nonWord.votes} Votes <span class="muted">(Rank 1)</span>
+				</p>
+			</div>
+			<div class="col-md-4">
+				<div class="btn-group">
+					<f:link.action action="downvote" arguments="{nonWord: nonWord}" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-thumbs-down"></span> Downvote</f:link.action>
+					<f:link.action action="upvote" arguments="{nonWord: nonWord}" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-thumbs-up"></span> Upvote</f:link.action>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<p>
+
+		<f:link.action action="edit" arguments="{nonWord: nonWord}" class="btn btn-default">Edit</f:link.action>
+
+		<f:form action="delete" arguments="{nonWord: nonWord}">
+			<f:form.submit value="Delete" class="btn btn-default" />
+		</f:form>
+	</p>
 </f:section>
