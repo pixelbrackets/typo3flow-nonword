@@ -81,7 +81,7 @@ class NonWord {
 	 * @return void
 	 */
 	public function setAuthor($author) {
-		$this->author = $author;
+		$this->author = trim($author);
 	}
 
 	/**
@@ -119,7 +119,7 @@ class NonWord {
 	 * @return void
 	 */
 	public function setLink($link) {
-		$this->link = $link;
+		$this->link = trim($link);
 	}
 
 	/**
@@ -157,7 +157,7 @@ class NonWord {
 	 * @return void
 	 */
 	public function setTitle($title) {
-		$this->title = $title;
+		$this->title = trim($title);
 	}
 
 }
