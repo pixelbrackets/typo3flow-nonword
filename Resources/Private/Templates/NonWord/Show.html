@@ -35,7 +35,14 @@
 			</div>
 			<div class="col-md-4">
 				<div class="btn-group">
-					<f:link.action action="downvote" arguments="{nonWord: nonWord}" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-thumbs-down"></span> Downvote</f:link.action>
+					<f:if condition="{nonWord.votes}">
+						<f:then>
+							<f:link.action action="downvote" arguments="{nonWord: nonWord}" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-thumbs-down"></span> Downvote</f:link.action>
+						</f:then>
+						<f:else>
+							<f:link.external uri="#" class="btn btn-default btn-lg disabled"><span class="glyphicon glyphicon-thumbs-down"></span> Downvote</f:link.external>
+						</f:else>
+					</f:if>
 					<f:link.action action="upvote" arguments="{nonWord: nonWord}" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-thumbs-up"></span> Upvote</f:link.action>
 				</div>
 			</div>
