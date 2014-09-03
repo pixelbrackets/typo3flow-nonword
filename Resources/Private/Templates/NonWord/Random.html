@@ -13,17 +13,19 @@
 		</blockquote>
 
 		<div class="row">
-			<div class="col-md-6">
-				Share <code><span class="glyphicon glyphicon-share-alt"></span> <f:link.action action="show" arguments="{nonWord: nonWord}"><f:uri.action action="show" arguments="{nonWord: nonWord}" absolute="true"></f:uri.action></f:link.action></code>
+			<div class="col-md-5">
+				<pre><span class="glyphicon glyphicon-share-alt"></span> <f:link.action action="show" arguments="{nonWord: nonWord}"><f:uri.action action="show" arguments="{nonWord: nonWord}" absolute="true"></f:uri.action></f:link.action></pre>
 			</div>
-			<div class="col-md-6">
-				<p class="">
-					{nonWord.votes} Votes <span class="muted">(Rank 23)</span>
-					<div class="btn-group">
-						<f:link.action action="downvote" arguments="{nonWord: nonWord}" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-thumbs-down"></span> Downvote</f:link.action>
-						<f:link.action action="upvote" arguments="{nonWord: nonWord}" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-thumbs-up"></span> Upvote</f:link.action>
-					</div>
+			<div class="col-md-3">
+				<p class="pull-right">
+					{nonWord.votes} Votes <span class="muted">(Rank 1)</span>
 				</p>
+			</div>
+			<div class="col-md-4">
+				<div class="btn-group">
+					<f:link.action action="downvote" arguments="{nonWord: nonWord}" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-thumbs-down"></span> Downvote</f:link.action>
+					<f:link.action action="upvote" arguments="{nonWord: nonWord}" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-thumbs-up"></span> Upvote</f:link.action>
+				</div>
 			</div>
 		</div>
 	</div>
