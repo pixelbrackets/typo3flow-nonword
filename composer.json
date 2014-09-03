@@ -1,1 +1,13 @@
-{"name":"pixelbrackets\/nonword","type":"typo3-flow-package","description":"Add description here","require":{"typo3\/flow":"*"},"autoload":{"psr-0":{"Pixelbrackets\\NonWord":"Classes"}}}
+{
+    "name": "pixelbrackets/nonword",
+    "type": "typo3-flow-package",
+    "description": "A list of non words",
+    "require": {
+        "typo3/flow": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Pixelbrackets\\NonWord": "Classes"
+        }
+    }
+}
