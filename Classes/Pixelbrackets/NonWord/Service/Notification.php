@@ -2,6 +2,7 @@
 namespace Pixelbrackets\NonWord\Service;
 
 use TYPO3\Flow\Annotations as Flow;
+use Pixelbrackets\NonWord\Domain\Model\NonWord;
 
 class Notification {
 
