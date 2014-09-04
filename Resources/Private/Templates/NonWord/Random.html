@@ -7,8 +7,19 @@
 		<blockquote cite="{nonWord.link}">
 			<p>{nonWord.title}</p>
 
-			<f:if condition="{nonWords.link}">
-				<footer>— <a href="{nonWord.link}">{nonWord.author}</a></footer>
+			<f:if condition="{nonWord.link}">
+				<f:then>
+					<footer>
+						<f:link.external uri="{nonWord.link}" defaultScheme="http">{f:if(condition:'{nonWord.author}',then: '{nonWord.author}',else: '{nonWord.link}')}</f:link.external>
+					</footer>
+				</f:then>
+				<f:else>
+					<f:if condition="{nonWord.author}">
+						<footer>
+							{nonWord.author}
+						</footer>
+					</f:if>
+				</f:else>
 			</f:if>
 		</blockquote>
 
@@ -22,10 +33,7 @@
 				</p>
 			</div>
 			<div class="col-md-4">
-				<div class="btn-group">
-					<f:link.action action="downvote" arguments="{nonWord: nonWord}" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-thumbs-down"></span> Downvote</f:link.action>
-					<f:link.action action="upvote" arguments="{nonWord: nonWord}" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-thumbs-up"></span> Upvote</f:link.action>
-				</div>
+				<f:render partial="VoteButtons" arguments="{nonWord: '{nonWord}', buttonsize: 'lg'}" />
 			</div>
 		</div>
 	</div>
