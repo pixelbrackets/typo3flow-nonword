@@ -93,10 +93,11 @@ class NonWordController extends ActionController {
 	 * Signal
 	 *
 	 * @param \Pixelbrackets\NonWord\Domain\Model\NonWord $nonWord
+	 * @param string $uri
 	 * @return void
 	 * @Flow\Signal
 	 */
-	protected function emitNonWordCreated(NonWord $nonWord) {}
+	protected function emitNonWordCreated(NonWord $nonWord, $uri) {}
 
 	/**
 	 * Add the given non word object to the non word repository
@@ -107,7 +108,10 @@ class NonWordController extends ActionController {
 	 */
 	public function createAction(NonWord $newNonWord) {
 		$this->nonWordRepository->add($newNonWord);
-		$this->emitNonWordCreated($newNonWord);
+		// create uri here instead of in notification service (URIBuilder needs controller context)
+		$uriBuilder = $this->controllerContext->getURIBuilder();
+		$uri = $uriBuilder->setCreateAbsoluteUri(1)->uriFor('show', array('nonWord' => $newNonWord));
+		$this->emitNonWordCreated($newNonWord, $uri);
 		$this->addFlashMessage('Created a new non word.');
 		$this->redirect('index');
 	}
