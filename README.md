@@ -11,7 +11,7 @@ TYPO3 Flow Package
 https://packagist.org/packages/pixelbrackets/nonword
 
 Installation
-~~~~~~~~~~~~
+------------
 
 The preferred way to install packages in TYPO3 Flow is through Composer (http://docs.typo3.org/flow/TYPO3FlowDocumentation/TheDefinitiveGuide/PartIII/PackageManagement.html#installing-a-package)
 
