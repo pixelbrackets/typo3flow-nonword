@@ -52,3 +52,5 @@ Contribution
 > TYPO3 - inspiring people to share!
 
 This TYPO3 Flow package is Open Source, so please use, patch, extend or fork it.
+
+[![Flattr](https://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/thing/3395864)
