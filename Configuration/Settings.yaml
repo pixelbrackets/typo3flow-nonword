@@ -1,0 +1,9 @@
+Pixelbrackets:
+  NonWord:
+    notification:
+      email: 'john@doe.com'
+      name: 'John Doe'
+      fromEmail: 'john@example.com'
+      fromName: 'John Doe'
+      toEmail: 'bill@example.com'
+      toName: 'Bill Doe'
