@@ -7,32 +7,34 @@
 
 	<f:if condition="{nonWords}">
 		<f:then>
-			<table class="table table-striped">
-				<colgroup>
-					<col width="0*">
-					<col width="100%">
-				</colgroup>
-				<thead>
-					<tr>
-						<th align="right">Rank</th>
-						<th>Post</th>
-						<th align="right">Votes</th>
-						<th>Yea or Nay?</th>
-					</tr>
-				</thead>
-				<tbody>
-					<f:for each="{nonWords}" as="nonWord">
+			<f:widget.paginate objects="{nonWords}" as="paginatedNonWords" configuration="{itemsPerPage: 25}">
+				<table class="table table-striped">
+					<colgroup>
+						<col width="0*">
+						<col width="100%">
+					</colgroup>
+					<thead>
 						<tr>
-							<td align="right">1</td>
-							<td><f:link.action action="show" arguments="{nonWord: nonWord}">{nonWord.title}</f:link.action></td>
-							<td align="right">{nonWord.votes}</td>
-							<td>
-								<f:render partial="VoteButtons" arguments="{nonWord: '{nonWord}', buttonsize: 'sm'}" />
-							</td>
+							<th align="right">Rank</th>
+							<th>Post</th>
+							<th align="right">Votes</th>
+							<th>Yea or Nay?</th>
 						</tr>
-					</f:for>
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						<f:for each="{paginatedNonWords}" as="nonWord">
+							<tr>
+								<td align="right">1</td>
+								<td><f:link.action action="show" arguments="{nonWord: nonWord}">{nonWord.title}</f:link.action></td>
+								<td align="right">{nonWord.votes}</td>
+								<td>
+									<f:render partial="VoteButtons" arguments="{nonWord: '{nonWord}', buttonsize: 'sm'}" />
+								</td>
+							</tr>
+						</f:for>
+					</tbody>
+				</table>
+			</f:widget.paginate>
 		</f:then>
 		<f:else>
 			<p>No non words created yet.</p>
