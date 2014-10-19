@@ -23,7 +23,7 @@ class LoginController extends AbstractAuthenticationController {
 	 * @return string
 	 */
 	protected function onAuthenticationSuccess(\TYPO3\Flow\Mvc\ActionRequest $originalRequest = NULL) {
-		$this->redirect('index');
+		$this->redirect('index', 'NonWord');
 	}
 
 	/**
@@ -31,6 +31,6 @@ class LoginController extends AbstractAuthenticationController {
 	 */
 	public function logoutAction() {
 		parent::logoutAction();
-		$this->redirect('index');
+		$this->redirect('index', 'NonWord');
 	}
 }
