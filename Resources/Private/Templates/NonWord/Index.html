@@ -3,7 +3,14 @@
 <f:section name="Title">A list of non words</f:section>
 
 <f:section name="Content">
-	<p><span class="glyphicon glyphicon-plus-sign"></span> <f:link.action action="new">Create a new non word</f:link.action></p>
+	<f:security.ifAccess resource="NonWordCreate">
+		<f:then>
+			<p><span class="glyphicon glyphicon-plus-sign"></span> <f:link.action action="new">Create a new non word</f:link.action></p>
+		</f:then>
+		<f:else>
+			<p><span class="glyphicon glyphicon-plus-sign"></span> <f:link.action action="new">You need to login to create a new non word</f:link.action></p>
+		</f:else>
+	</f:security.ifAccess>
 
 	<f:if condition="{nonWords}">
 		<f:then>

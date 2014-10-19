@@ -38,9 +38,13 @@
 		</div>
 	</div>
 
-	<p><f:link.action action="edit" arguments="{nonWord: nonWord}" class="btn btn-default">Edit</f:link.action></p>
+	<f:security.ifAccess resource="NonWordEdit">
+		<p><f:link.action action="edit" arguments="{nonWord: nonWord}" class="btn btn-default">Edit</f:link.action></p>
+	</f:security.ifAccess>
 
-	<f:form action="delete" arguments="{nonWord: nonWord}">
-		<f:form.submit value="Delete" class="btn btn-default" />
-	</f:form>
+	<f:security.ifAccess resource="NonWordDelete">
+		<f:form action="delete" arguments="{nonWord: nonWord}">
+			<f:form.submit value="Delete" class="btn btn-default" />
+		</f:form>
+	</f:security.ifAccess>
 </f:section>
