@@ -1,0 +1,19 @@
+resources:
+  methods:
+    NonWordCreate: 'method(Pixelbrackets\NonWord\Controller\NonWordController->(new|create)Action())'
+    NonWordEdit: 'method(.*NonWordController->(edit|update)Action())'
+    NonWordDelete: 'method(.*NonWordController->deleteAction())'
+
+roles:
+  Administrator: []
+  Reporter: []
+
+acls:
+  Administrator:
+    methods:
+      NonWordCreate: GRANT
+      NonWordEdit: GRANT
+      NonWordDelete: GRANT
+  Reporter:
+      methods:
+        NonWordCreate: GRANT
