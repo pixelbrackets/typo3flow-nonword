@@ -3,7 +3,6 @@
 <f:section name="Title">Show non word “{nonWord.title}”</f:section>
 
 <f:section name="Content">
-
 	<div class="jumbotron">
 		<blockquote cite="{nonWord.link}">
 			<p>{nonWord.title}</p>
@@ -39,12 +38,9 @@
 		</div>
 	</div>
 
-	<p>
+	<p><f:link.action action="edit" arguments="{nonWord: nonWord}" class="btn btn-default">Edit</f:link.action></p>
 
-		<f:link.action action="edit" arguments="{nonWord: nonWord}" class="btn btn-default">Edit</f:link.action>
-
-		<f:form action="delete" arguments="{nonWord: nonWord}">
-			<f:form.submit value="Delete" class="btn btn-default" />
-		</f:form>
-	</p>
+	<f:form action="delete" arguments="{nonWord: nonWord}">
+		<f:form.submit value="Delete" class="btn btn-default" />
+	</f:form>
 </f:section>
