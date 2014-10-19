@@ -73,6 +73,18 @@
 					</f:if>
 						<f:link.action action="random">Random generator</f:link.action></li>
 				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<f:security.ifAuthenticated>
+							<f:then>
+								<f:link.action action="logout" controller="Login">Logout</f:link.action>
+							</f:then>
+							<f:else>
+								<f:link.action action="login" controller="Login">Login</f:link.action>
+							</f:else>
+						</f:security.ifAuthenticated>
+					</li>
+				</ul>
 			</div>
 		</div>
 

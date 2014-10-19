@@ -5,4 +5,10 @@ TYPO3:
         providers:
           DefaultProvider:
             provider: 'PersistedUsernamePasswordProvider'
-            tokenClass: UsernamePasswordHttpBasic
+            entryPoint: 'WebRedirect'
+            entryPointOptions:
+              routeValues:
+                '@package': 'Pixelbrackets.NonWord'
+                '@controller': 'Login'
+                '@action': 'login'
+                '@format': 'html'
