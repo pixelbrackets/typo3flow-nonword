@@ -1,0 +1,8 @@
+TYPO3:
+  Flow:
+    security:
+      authentication:
+        providers:
+          DefaultProvider:
+            provider: 'PersistedUsernamePasswordProvider'
+            tokenClass: UsernamePasswordHttpBasic
