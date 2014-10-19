@@ -62,7 +62,7 @@
 					<f:link.action action="index" controller="NonWord" class="navbar-brand">List of non words</f:link.action>
 				</div>
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Board</a></li>
+					<li class="active"><f:link.action action="index" controller="NonWord">Board</f:link.action></li>
 					<f:if condition="{action}=='random'">
 						 <f:then>
 							<li	class="active">
@@ -71,7 +71,7 @@
 							<li>
 						</f:else>
 					</f:if>
-						<f:link.action action="random">Random generator</f:link.action></li>
+						<f:link.action action="random" controller="NonWord">Random generator</f:link.action></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li>
