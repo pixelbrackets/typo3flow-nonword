@@ -2,9 +2,16 @@
     "name": "pixelbrackets/nonword",
     "type": "typo3-flow-package",
     "description": "A list of non words",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/svparijs/TYPO3.AccountManagement"
+        }
+    ],
     "require": {
         "typo3/flow": "*",
-        "typo3/twitter-bootstrap": "*"
+        "typo3/twitter-bootstrap": "*",
+        "typo3/accountmanagement": "@dev"
     },
     "autoload": {
         "psr-0": {
