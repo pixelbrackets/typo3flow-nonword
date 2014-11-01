@@ -1,0 +1,14 @@
+conf.py:
+  project: Pixelbrackets.NonWord
+  version: 0.1.0
+  release: 0.1.0
+  latex_documents:
+  - - Index
+    - pixelbrackets.nonword.tex
+    - Non Word
+    - Dan Untenzu
+    - manual
+  latex_elements:
+    papersize: a4paper
+    pointsize: 10pt
+    preamble: \usepackage{typo3}
