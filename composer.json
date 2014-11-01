@@ -2,6 +2,7 @@
     "name": "pixelbrackets/nonword",
     "type": "typo3-flow-package",
     "description": "A list of non words",
+    "license": "GPL-2.0",
     "require": {
         "typo3/flow": "*",
         "typo3/twitter-bootstrap": "*"
