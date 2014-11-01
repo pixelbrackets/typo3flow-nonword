@@ -27,7 +27,7 @@ https://github.com/pixelbrackets/typo3flow-nonword/
 Documentation
 -------------
 
-Read online (HTML) https://github.com/pixelbrackets/typo3flow-nonword/blob/master/Documentation/Index.rst
+Read online (HTML) http://pixelbrackets.github.io/typo3flow-nonword/Index.html
 
 License
 -------
