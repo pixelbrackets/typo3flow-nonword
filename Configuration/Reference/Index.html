@@ -1,0 +1,260 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Reference &mdash; TYPO3 Flow 2.0.0</title>
+    
+    <link rel="stylesheet" href="../../_static/typo3Theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/typo3-adjustments.js"></script>
+    <link rel="top" title="TYPO3 Flow 2.0.0" href="../../index.html" />
+    <link rel="up" title="Configuration" href="../Index.html" />
+    <link rel="next" title="Known problems" href="../../KnownProblems/Index.html" />
+    <link rel="prev" title="Configuration" href="../Index.html" /> 
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div class="header">
+          <p class="logo"><a href="../../Index.html">
+            <img class="logo" src="../../_static/t3_logo_b_w_inverted.png" alt="Logo"/>
+          </a></p>
+        <h1><a href="../../Index.html">TYPO3 Flow 2.0.0</a></h1>
+        <div class="rel">
+          <a href="../Index.html" title="Configuration"
+             accesskey="P">previous</a> |
+          <a href="../../KnownProblems/Index.html" title="Known problems"
+             accesskey="N">next</a> |
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="reference">
+<h1>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h1>
+<p><strong>TSconfig</strong></p>
+<ul class="simple">
+<li>mod.web_txorphanfilesM1.</li>
+</ul>
+<div class="table-row container">
+<dl class="docutils">
+<dt>Property</dt>
+<dd>includeDeletedRecords</dd>
+<dt>Data type</dt>
+<dd>Boolean</dd>
+<dt>Description</dt>
+<dd><p class="first">All deleted elements are ignored by default, since this extension is
+supposed to find only files which are not used anymore.</p>
+<p class="last">If editors use the recycler you may use this option.</p>
+</dd>
+<dt>Default</dt>
+<dd>0</dd>
+</dl>
+</div>
+<div class="table-row container">
+<dl class="docutils">
+<dt>Property</dt>
+<dd>showDeleteAllButton</dd>
+<dt>Data type</dt>
+<dd>Boolean</dd>
+<dt>Description</dt>
+<dd>Show a button to delete all orphaned files at once.</dd>
+<dt>Default</dt>
+<dd>0</dd>
+</dl>
+</div>
+<div class="table-row container">
+<dl class="docutils">
+<dt>Property</dt>
+<dd>showDeleteCheckbox</dd>
+<dt>Data type</dt>
+<dd>Boolean</dd>
+<dt>Description</dt>
+<dd>Show checkboxes instead of buttons to delete multiple files.</dd>
+<dt>Default</dt>
+<dd>0</dd>
+</dl>
+</div>
+<div class="table-row container">
+<dl class="docutils">
+<dt>Property</dt>
+<dd>clearCacheAfterDeletion</dd>
+<dt>Data type</dt>
+<dd>Boolean</dd>
+<dt>Description</dt>
+<dd>Clear the cache after deletions. Only activate if necessary.</dd>
+<dt>Default</dt>
+<dd>0</dd>
+</dl>
+</div>
+<div class="table-row container">
+<dl class="docutils">
+<dt>Property</dt>
+<dd>baseurl</dd>
+<dt>Data type</dt>
+<dd>String</dd>
+<dt>Description</dt>
+<dd>Use this URL to show a preview link to orphaned files. Something like
+» <a class="reference external" href="http://example.com/">http://example.com/</a> «.</dd>
+<dt>Default</dt>
+<dd>(None)</dd>
+</dl>
+</div>
+<div class="table-row container">
+<dl class="docutils">
+<dt>Property</dt>
+<dd>crawl.[table]</dd>
+<dt>Data type</dt>
+<dd>Array</dd>
+<dt>Description</dt>
+<dd><p class="first">Limit the search area to certain tables or fields (by default all
+tables and fields in TCA are searched, which can take a very long time
+and is rather lavish).</p>
+<p><strong>Syntax:</strong></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="p">[</span><span class="nx">table</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">field</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="nx">field</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The field value is used in a select query, so use »*« as asterisk or
+a list of field names.</p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-php"><div class="highlight"><pre><span class="nx">crawl</span> <span class="p">{</span>
+  <span class="nx">tt_content</span> <span class="o">=</span> <span class="o">*</span>
+  <span class="nx">pages</span> <span class="o">=</span> <span class="nx">media</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+<dt>Default</dt>
+<dd>(None)</dd>
+</dl>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>If you run into timeouts then you may want limit the search area. You
+could use this configuration for a installation with TemplaVoila and
+tt_news:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nx">mod</span><span class="o">.</span><span class="nx">web_txorphanfilesM1</span> <span class="p">{</span>
+    <span class="nx">crawl</span><span class="o">.</span><span class="nx">tt_content</span> <span class="o">=</span> <span class="o">*</span>
+    <span class="nx">crawl</span><span class="o">.</span><span class="nx">pages</span> <span class="o">=</span> <span class="o">*</span>
+    <span class="nx">crawl</span><span class="o">.</span><span class="nx">pages_language_overlay</span> <span class="o">=</span> <span class="o">*</span>
+
+    <span class="c1">### some extension tables</span>
+    <span class="nx">crawl</span><span class="o">.</span><span class="nx">tx_templavoila_tmplobj</span> <span class="o">=</span> <span class="o">*</span>
+    <span class="nx">crawl</span><span class="o">.</span><span class="nx">tt_news</span> <span class="o">=</span> <span class="o">*</span>
+    <span class="nx">crawl</span><span class="o">.</span><span class="nx">tt_news_cat</span> <span class="o">=</span> <span class="o">*</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Maybe this is still not enough, then narrow down the search even more
+with a given set of fields. But watch out for flexform fields, the
+extension is not able to find out where the associated DS definition
+can be found (just search for »ds_pointerField« in your configuration
+and add all mentioned fields):</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nx">mod</span><span class="o">.</span><span class="nx">web_txorphanfilesM1</span> <span class="p">{</span>
+    <span class="c1">### everything after</span>
+    <span class="nx">crawl</span><span class="o">.</span><span class="nx">tt_content</span> <span class="o">=</span> <span class="nx">image</span><span class="p">,</span> <span class="nx">media</span><span class="p">,</span> <span class="nx">header_link</span><span class="p">,</span> <span class="nx">image_link</span><span class="p">,</span> <span class="nx">bodytext</span><span class="p">,</span> <span class="nx">pi_flexform</span><span class="p">,</span> <span class="nx">tx_templavoila_flex</span><span class="p">,</span> <span class="nx">list_type</span><span class="p">,</span> <span class="nx">CType</span><span class="p">,</span> <span class="nx">tx_templavoila_ds</span>
+    <span class="nx">crawl</span><span class="o">.</span><span class="nx">pages</span> <span class="o">=</span> <span class="nx">media</span><span class="p">,</span> <span class="nx">tx_templavoila_flex</span><span class="p">,</span> <span class="nx">tx_templavoila_ds</span><span class="p">,</span> <span class="nx">pid</span><span class="p">,</span> <span class="nx">tx_templavoila_next_ds</span>
+    <span class="nx">crawl</span><span class="o">.</span><span class="nx">pages_language_overlay</span> <span class="o">=</span> <span class="nx">media</span>
+
+    <span class="nx">crawl</span><span class="o">.</span><span class="nx">tx_templavoila_tmplobj</span> <span class="o">=</span> <span class="nx">previewicon</span><span class="p">,</span> <span class="nx">fileref</span>
+    <span class="nx">crawl</span><span class="o">.</span><span class="nx">tt_news</span> <span class="o">=</span> <span class="nx">image</span><span class="p">,</span> <span class="nx">short</span><span class="p">,</span> <span class="nx">bodytext</span><span class="p">,</span> <span class="nx">news_files</span><span class="p">,</span> <span class="nx">links</span>
+    <span class="nx">crawl</span><span class="o">.</span><span class="nx">tt_news_cat</span> <span class="o">=</span> <span class="nx">image</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="sidebar">
+			<div class="sidebarInner">
+          <h3>Table Of Contents</h3>
+		  <!-- MODIFICATION START: include up to three levels in the TOC tree -->
+          <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Introduction/Index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Index.html">Configuration</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Reference</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../KnownProblems/Index.html">Known problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../To-doList/Index.html">To-Do list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Changelog/Index.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Contribution/Index.html">Contribution</a></li>
+</ul>
+
+		  <!-- MODIFICATION END -->
+          <h3 style="margin-top: 1.5em;">Search</h3>
+          <form class="search" action="../../search.html" method="get">
+            <input type="text" name="q" size="18" />
+            <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+          <p class="searchtip" style="font-size: 90%">
+            Enter search terms or a module, class or function name.
+          </p>
+			</div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <a href="../Index.html" title="Configuration"
+             >previous</a> |
+          <a href="../../KnownProblems/Index.html" title="Known problems"
+             >next</a> |
+          <a href="../../genindex.html" title="General Index"
+             >index</a>
+            <br/>
+            <a href="../../_sources/Configuration/Reference/Index.txt"
+               rel="nofollow">Show Source</a>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer">
+        &copy; Copyright 2011-2012, TYPO3 Flow team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>
